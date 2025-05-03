@@ -1,0 +1,147 @@
+:root {
+    --main-color: #4285f4;
+    --form-bg: #ffffff;
+    --page-bg: #f0f2f5;
+    --input-bg: #f7f9fc;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--page-bg);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+  }
+  
+  .form-container {
+    background-color: var(--form-bg);
+    padding: 30px 40px;
+    margin: 60px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #4285f4, #34a853);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 26px;
+  }
+  
+  .form-group {
+    position: relative;
+    margin-bottom: 25px;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: var(--input-bg); /* Fix: light grey input background */
+    color: #333;
+    outline: none;
+    transition: border 0.3s;
+    accent-color: var(--main-color);
+  }
+  
+  .form-group select {
+    background-color: var(--input-bg); /* Ensure consistent background */
+    color: #333; /* Text color */
+    border: 1px solid #ccc; /* Default border */
+    transition: border 0.3s ease; /* Smooth border transition */
+  }
+  
+  .form-group select:focus {
+    border-color: var(--main-color); /* Highlight border on focus */
+    background-color: var(--input-bg); /* Prevent unwanted background changes */
+    color: #333; /* Ensure text color remains consistent */
+  }
+  
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--main-color);
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--main-color);
+  }
+  
+  .form-group label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: transparent; /* Transparent background */
+    color: #555;
+    transition: 0.2s ease-in-out;
+    padding: 0 5px;
+    pointer-events: none;
+  }
+  
+  .form-group input:focus + label,
+  .form-group input:not(:placeholder-shown) + label,
+  .form-group textarea:focus + label,
+  .form-group textarea:not(:placeholder-shown) + label,
+  .form-group select:focus + label,
+  .form-group select:not(:placeholder-shown) + label,
+  .form-group select:valid + label {
+    top: -10px;
+    left: 8px;
+    font-size: 13px;
+    color: var(--main-color); /* Highlight color */
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  .radio-group {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .radio-group label {
+    margin-right: 20px;
+    font-weight: normal;
+  }
+  
+  .submit-btn {
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #3367d6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(66, 133, 244, 0.3);
+  }
+  
+  @media (max-width: 500px) {
+    .form-container {
+      padding: 20px;
+    }
+  }
